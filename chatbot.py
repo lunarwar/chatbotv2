@@ -15,7 +15,7 @@ db = pymysql.connect(
 
 # Fetch intents data from the database
 cursor = db.cursor()
-cursor.execute("SELECT tag, patterns, responses FROM intents")
+cursor.execute("SELECT * FROM intents")
 data = cursor.fetchall()
 
 # Get column names from cursor description
