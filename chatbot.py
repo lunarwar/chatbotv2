@@ -13,8 +13,7 @@ db = pymysql.connect(
     port=os.getenv('port'),
     user=os.getenv('user'),
     password=os.getenv('password'),
-    database=os.getenv('database'),
-    table=os.getenv('table')
+    database=os.getenv('database')
 )
 
 # Fetch intents data from the database
