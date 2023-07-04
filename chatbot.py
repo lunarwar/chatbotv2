@@ -4,13 +4,18 @@ from utils.preprocessing import preprocess_input, preprocess_training_data
 from utils.training import train_model
 import numpy as np
 import tensorflow as tf
+import os
 
 # Connect to the MySQL database
 db = pymysql.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="chatbot"
+    host= os.getenv('localhost'),
+    user=os.getenv('user'),
+    password=os.getenv('password'),
+    database=os.getenv('database')
+    # host="localhost",
+    # user="root",
+    # password="root",
+    # database="chatbot"
 )
 
 # Fetch intents data from the database
