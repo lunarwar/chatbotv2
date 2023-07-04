@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 # Connect to the MySQL database
 db = pymysql.connect(
-    host= os.getenv('localhost'),
+    host= os.getenv('host'),
     port=os.getenv('port'),
     user=os.getenv('user'),
     password=os.getenv('password'),
