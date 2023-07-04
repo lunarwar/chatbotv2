@@ -10,7 +10,7 @@ load_dotenv()
 # Connect to the MySQL database
 db = pymysql.connect(
     host= os.getenv('host'),
-    port=os.getenv('port'),
+    port=int(os.getenv('port')),
     user=os.getenv('user'),
     password=os.getenv('password'),
     database=os.getenv('database')
