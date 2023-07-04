@@ -5,7 +5,8 @@ from utils.training import train_model
 import numpy as np
 import tensorflow as tf
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # Connect to the MySQL database
 db = pymysql.connect(
     host= os.getenv('localhost'),
