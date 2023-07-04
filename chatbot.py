@@ -52,7 +52,7 @@ def generate_response(predicted_class):
 
     return response
 def place_holder_init():
-    return "works fine"
+    return "Job completed fine"
 # ##Main interaction loop
 # while True:
 #     user_input = input("You: ")
@@ -78,5 +78,5 @@ def place_holder_init():
 #         break
 
 # Close the database connection
-place_holder_init()
+print(place_holder_init())
 db.close()
