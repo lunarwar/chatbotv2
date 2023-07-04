@@ -79,5 +79,5 @@ def place_holder_init():
 
 # Close the database connection
 print(place_holder_init())
-print("testing git control triggersx")
+print("testing git control triggersxxxxxx")
 db.close()
