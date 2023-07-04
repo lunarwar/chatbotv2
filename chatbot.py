@@ -9,13 +9,11 @@ import os
 # Connect to the MySQL database
 db = pymysql.connect(
     host= os.getenv('localhost'),
+    port=int(os.getenv('port')),
     user=os.getenv('user'),
     password=os.getenv('password'),
-    database=os.getenv('database')
-    # host="localhost",
-    # user="root",
-    # password="root",
-    # database="chatbot"
+    database=os.getenv('database'),
+    table=os.getenv('table')
 )
 
 # Fetch intents data from the database

@@ -1,17 +1,19 @@
 import pymysql
 import json
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # Connect to the MySQL database
 connection_string= {
     "host":os.getenv('host'),
-    "port":os.getenv('port'),
+    "port":int(os.getenv('port')),
     "user":os.getenv('user'),
     "password":os.getenv('password'),
     "database":os.getenv('database'),
     "table":os.getenv('table')
 }
-db = pymysql.connect(host=connection_string["host"],user=connection_string["user"],password=connection_string["password"], port=connection_string["port"])
+print(connection_string['port'])
+db = pymysql.connect(host=connection_string["host"],user=connection_string["user"],password=connection_string["password"], port=connection_string['port'])
 
 # Create a new database //this should be in try but who cares (:)
 database_name = database=connection_string["database"]
@@ -24,7 +26,7 @@ print("closing connection")
 db.close()
 
 # Create a new tables  //this should be in try but who cares (:)
-db = pymysql.connect(host=connection_string["host"],user=connection_string["user"],password=connection_string["password"], database=connection_string["database"], port=connection_string["port"])
+db = pymysql.connect(host=connection_string["host"],user=connection_string["user"],password=connection_string["password"], database=connection_string["database"], port=connection_string['port'])
 cursor_table = db.cursor()
 print("reopened connection")
 create_table_query = """
@@ -56,3 +58,4 @@ def insert_to_table(cursor_table):
     db.commit()
 insert_to_table(cursor_table)
 db.close()
+print("All record inserted successfully")
