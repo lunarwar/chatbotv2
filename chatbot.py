@@ -55,7 +55,7 @@ def place_holder_init():
     return "Job completed fine"
 # ##Main interaction loop
 # while True:
-#     user_input = input("You: ")
+#     user_input = input("You: ")/
 #     preprocessed_input = preprocess_input(user_input)
 #     bag = [0] * len(words)
 #     for word in preprocessed_input:
