@@ -51,30 +51,32 @@ def generate_response(predicted_class):
         response = "Sorry, I didn't understand. Can you please rephrase?"
 
     return response
+def place_holder_init():
+    return "works fine"
+# ##Main interaction loop
+# while True:
+#     user_input = input("You: ")
+#     preprocessed_input = preprocess_input(user_input)
+#     bag = [0] * len(words)
+#     for word in preprocessed_input:
+#         for i, w in enumerate(words):
+#             if w == word:
+#                 bag[i] = 1
 
-# Main interaction loop
-while True:
-    user_input = input("You: ")
-    preprocessed_input = preprocess_input(user_input)
-    bag = [0] * len(words)
-    for word in preprocessed_input:
-        for i, w in enumerate(words):
-            if w == word:
-                bag[i] = 1
+#     results = model.predict(np.array([bag]))[0]
+#     predicted_class_index = np.argmax(results)
+#     confidence = results[predicted_class_index]
 
-    results = model.predict(np.array([bag]))[0]
-    predicted_class_index = np.argmax(results)
-    confidence = results[predicted_class_index]
+#     if confidence > 0.6:
+#         predicted_class = classes[predicted_class_index]
+#     else:
+#         predicted_class = "unknown"
 
-    if confidence > 0.6:
-        predicted_class = classes[predicted_class_index]
-    else:
-        predicted_class = "unknown"
-
-    response = generate_response(predicted_class)
-    print("Bot:", response)
-    if predicted_class == "goodbye":
-        break
+#     response = generate_response(predicted_class)
+#     print("Bot:", response)
+#     if predicted_class == "goodbye":
+#         break
 
 # Close the database connection
+place_holder_init()
 db.close()
