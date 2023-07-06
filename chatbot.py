@@ -5,6 +5,7 @@ from utils.training import train_model
 import numpy as np
 import tensorflow as tf
 import os
+import logging
 from dotenv import load_dotenv
 load_dotenv()
 # Connect to the MySQL database
@@ -79,5 +80,6 @@ def place_holder_init():
 
 # Close the database connection
 print(place_holder_init())
+logging.critical("some we")
 print("testing git control triggersxxxxxx")
 db.close()

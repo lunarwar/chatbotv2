@@ -3,6 +3,7 @@ import json
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import logging
 # Connect to the MySQL database
 connection_string= {
     "host":os.getenv('host'),
